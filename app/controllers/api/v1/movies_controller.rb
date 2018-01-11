@@ -1,10 +1,12 @@
 class Api::V1::MoviesController < ApplicationController
 
   def index
-    # todo
+    movies = Movie.all
+    render json: movies, status: :ok
   end
 
   def show
-    # todo
+    movie = Movie.find(params[:id])
+    render json: movie, status: :ok
   end
 end
